@@ -1,6 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Buscar } from "../screens/buscar";
+import { ListagemUsers } from "../screens/listagemUsers";
 
 const Stack = createNativeStackNavigator();
 
@@ -10,6 +11,13 @@ export function AppRoutes() {
       <Stack.Screen
         name="Buscar"
         component={Buscar}
+        options={{
+          headerShown: false,
+        }}
+      />
+        <Stack.Screen
+        name="Users"
+        component={ListagemUsers}
         options={{
           headerShown: false,
         }}

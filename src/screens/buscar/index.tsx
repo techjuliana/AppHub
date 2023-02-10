@@ -6,9 +6,12 @@ import Git from "./../../assets/git.png";
 import { useNavigation } from "@react-navigation/native";
 
 import React from "react";
-import { Image } from "react-native";
 export function Buscar() {
-  function handlePesquisar() {}
+
+  const { navigate } = useNavigation();
+  function handlePesquisar() {
+    navigate("Users");
+  }
 
   return (
     <Container>
