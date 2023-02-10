@@ -6,17 +6,14 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  padding: 10px;
-  text-align: center;
   font-size: 20px;
   font-weight: bold;
-  /* color:  */
+  color: ${(props) => props.theme.color.TITLE};
 `;
 
 export const Subtitle = styled.Text`
-  text-align: center;
+  margin-bottom: 14px;
+  margin-top: 10px;
   font-size: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  /* color: */
+  color: ${(props) => props.theme.color.SUBTITLE};
 `;

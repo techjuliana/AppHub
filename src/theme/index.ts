@@ -6,5 +6,6 @@ export default {
     TEXTINPUT: '#141414',
     TEXTBUTTON:'#FFFFFF',
     BUTTON: '#141414',
+    BORDER:'#D8D8D8',
   },
 }

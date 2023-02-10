@@ -6,10 +6,10 @@ export const Container = styled.TextInput`
   min-height: 56px;
   max-height: 56px;
   font-size: 14px;
-  font-weight: bold;
-  /* color: ;
-  background-color: */
+  color: ${(props) => props.theme.color.TEXTINPUT};
   border-radius: 6px;
   padding: 16px;
   margin-bottom:10px;
+  border:1px;
+  border-color:${(props) => props.theme.color.BORDER};
 `;
