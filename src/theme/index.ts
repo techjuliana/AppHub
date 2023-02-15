@@ -7,5 +7,7 @@ export default {
     TEXTBUTTON:'#FFFFFF',
     BUTTON: '#141414',
     BORDER:'#D8D8D8',
+    TAG:'#EBEBEB',
+    TAGTEXT:'#000000',
   },
 }

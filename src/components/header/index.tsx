@@ -11,7 +11,7 @@ export function Header() {
     <Container>
       <Logo source={Git} />
       <Botao>
-      <Button title="Adicionar novo" onPress={handlePesquisar} />
+      {/* <Button title="Adicionar novo" onPress={handlePesquisar} /> */}
       </Botao>
     </Container>
   );
