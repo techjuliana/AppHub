@@ -4,11 +4,6 @@ import * as S from "./styles";
 import Check from "./../../assets/delete.png";
 import { UserDTO } from "../../dtos/UserDTO";
 
-// export interface userData {
-//   name:string;
-//   username:string;
-// }
-
 type Props = {
   data: UserDTO;
 };
@@ -22,7 +17,7 @@ export function Users({ data, ...rest}: Props) {
 <S.ColunaConjunto>
        <S.LinhaNome>
       <S.Titulo>{data.name}</S.Titulo>
-
+      <S.Titulo>{data.username}</S.Titulo>
       {/* <ButtonIcon onPress={irPerfil}>
       <S.Navegar source={Check} />
       </ButtonIcon> */}
@@ -39,12 +34,12 @@ export function Users({ data, ...rest}: Props) {
       </S.ContainerInfo>
 
       <S.LinhaInfo>
-      {/* <S.Icones source={Check} />
-      <S.TextoInfo>{empresa}</S.TextoInfo>
       <S.Icones source={Check} />
-      <S.TextoInfo>{cidade}</S.TextoInfo>
+      <S.TextoInfo>{data.name}</S.TextoInfo>
       <S.Icones source={Check} />
-      <S.TextoInfo>{estrelas}</S.TextoInfo> */}
+      <S.TextoInfo>{data.name}</S.TextoInfo>
+      <S.Icones source={Check} />
+      <S.TextoInfo>{data.name}</S.TextoInfo>
       </S.LinhaInfo>
     </S.Container>
   );

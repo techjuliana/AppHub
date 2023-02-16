@@ -1,21 +1,19 @@
-import { Container } from "./styles";
+import { Container, Loading } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 
 import React, { useEffect, useState } from "react";
 import { Header } from "../../components/header";
 import { Users } from "../../components/users";
 import api from "../../services/api";
-import { FlatList, TextInput } from "react-native";
+import { ActivityIndicator, FlatList, TextInput } from "react-native";
 import { UserDTO } from "../../dtos/UserDTO";
 import { Input } from "../../components/Input";
 // import { useNavigation } from '@react-navigation/native';
 
 export function ListagemUsers() {
- 
-  const [usersCarregado, setUsersCarregado] = useState(false);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<UserDTO[]>([]);
   const [buscarUser, setBuscarUser] = useState("");
-
+  const [loading, setLoading] = useState(true);
   // const navigation = useNavigation();
   // function handleRemoverUsuario() {}
   // function handleVerDetalhes(user: UserDTO) {
@@ -26,11 +24,20 @@ export function ListagemUsers() {
     async function loadUsers() {
       const response = await api.get("users/techjuliana");
       setUsers(response.data);
-      console.log(response.data);
+      setLoading(false);
+      // console.log(response.data.id);
     }
 
     loadUsers();
   }, []);
+
+  if (loading) {
+    return (
+      <Loading>
+        <ActivityIndicator color="#121212" size={45} />
+      </Loading>
+    );
+  } else {
 
   return (
     <Container>
@@ -41,15 +48,13 @@ export function ListagemUsers() {
       <Container>
         <FlatList
           data={users}
-          keyExtractor={item => item.id}
+          keyExtractor={item => String(item.id)}
           renderItem={({ item }) => 
-          <Users data={item}
-          //  onPress={() => handleCarDetails(item)} 
-           
-           />
+          <Users data={item}/>
         }
         />
       </Container>
     </Container>
   );
+}
 }
