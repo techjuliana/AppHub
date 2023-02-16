@@ -11,9 +11,11 @@ import { Input } from "../../components/Input";
 // import { useNavigation } from '@react-navigation/native';
 
 export function ListagemUsers() {
-  const [users, setUsers] = useState<UserDTO[]>([]);
+  const [usersDados, setUsersDados] = useState<UserDTO[]>([]);
   const [buscarUser, setBuscarUser] = useState("");
   const [loading, setLoading] = useState(true);
+
+  
   // const navigation = useNavigation();
   // function handleRemoverUsuario() {}
   // function handleVerDetalhes(user: UserDTO) {
@@ -23,9 +25,9 @@ export function ListagemUsers() {
   useEffect(() => {
     async function loadUsers() {
       const response = await api.get("users/techjuliana");
-      setUsers(response.data);
+      setUsersDados(response.data);
       setLoading(false);
-      // console.log(response.data.id);
+      console.log(response.data);
     }
 
     loadUsers();
@@ -47,7 +49,7 @@ export function ListagemUsers() {
       />
       <Container>
         <FlatList
-          data={users}
+          data={usersDados}
           keyExtractor={item => String(item.id)}
           renderItem={({ item }) => 
           <Users data={item}/>
