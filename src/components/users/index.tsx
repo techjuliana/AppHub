@@ -8,13 +8,14 @@ type Props = {
   data: UserDTO;
 };
 
+
 export function Users({ data }: Props) {
   return (
     <S.Container>
       <S.ContainerInfo>
         <S.ColunaConjunto>
           <S.LinhaNome>
-            <S.Titulo>{data.name}</S.Titulo>
+            <S.Titulo>{data.username}</S.Titulo>
             <S.Titulo></S.Titulo>
             {/* <ButtonIcon onPress={irPerfil}>
       <S.Navegar source={Check} />
