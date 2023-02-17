@@ -12,10 +12,9 @@ import { Input } from "../../components/Input";
 
 export function ListagemUsers() {
   const [usersDados, setUsersDados] = useState<UserDTO[]>([]);
-  const [buscarUser, setBuscarUser] = useState("");
   const [loading, setLoading] = useState(true);
 
-  
+  console.log("testeeeeee", usersDados, "testeeeeee");
   // const navigation = useNavigation();
   // function handleRemoverUsuario() {}
   // function handleVerDetalhes(user: UserDTO) {
@@ -27,7 +26,8 @@ export function ListagemUsers() {
       const response = await api.get("users/techjuliana");
       setUsersDados(response.data);
       setLoading(false);
-      console.log(response.data);
+      // console.log(response.data.login);
+      // console.log(usersDados);
     }
 
     loadUsers();
@@ -50,10 +50,8 @@ export function ListagemUsers() {
       <Container>
         <FlatList
           data={usersDados}
-          keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => 
-          <Users data={item}/>
-        }
+          renderItem={({item}) => <Users data={item} />}
+          keyExtractor={(item: UserDTO) => item.login}
         />
       </Container>
     </Container>
