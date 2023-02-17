@@ -40,7 +40,7 @@ export function ListagemUsers() {
       <Container>
         <FlatList
           data={usersDados}
-          renderItem={({item}) => <Users data={item} />}
+          renderItem={({item}) => <Users name="Esse teste nao esta mostrando na tela" data={item} />}
           keyExtractor={(item: UserDTO) => item.login}
         />
       </Container>

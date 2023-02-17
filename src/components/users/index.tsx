@@ -6,16 +6,18 @@ import { UserDTO } from "../../dtos/UserDTO";
 
 type Props = {
   data: UserDTO;
+  name:string;
 };
 
 
-export function Users({ data }: Props) {
+export function Users({ data, name }: Props) {
   return (
     <S.Container>
       <S.ContainerInfo>
         <S.ColunaConjunto>
           <S.LinhaNome>
             <S.Titulo>{data.username}</S.Titulo>
+            <S.Titulo>{name}</S.Titulo>
             <S.Titulo></S.Titulo>
             {/* <ButtonIcon onPress={irPerfil}>
       <S.Navegar source={Check} />
