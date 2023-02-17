@@ -16,7 +16,7 @@ export function ListagemUsers() {
   useEffect(() => {
     async function loadUsers() {
       const response = await api.get("users/techjuliana");
-      setUsersDados(response.data);
+      setUsersDados([response.data]);
       setLoading(false);
     }
 

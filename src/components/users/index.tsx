@@ -16,8 +16,9 @@ export function Users({ data, name }: Props) {
       <S.ContainerInfo>
         <S.ColunaConjunto>
           <S.LinhaNome>
-            <S.Titulo>{data.username}</S.Titulo>
-            <S.Titulo>{name}</S.Titulo>
+            <S.Titulo>{data.name}</S.Titulo>
+
+            
             <S.Titulo></S.Titulo>
             {/* <ButtonIcon onPress={irPerfil}>
       <S.Navegar source={Check} />
