@@ -11,6 +11,11 @@ export function ListagemUsers() {
   const [usersDados, setUsersDados] = useState<UserDTO[]>([]);
   const [loading, setLoading] = useState(true);
 
+  function perfil() {
+
+  }
+
+
   console.log("teste api funcionando", usersDados);
 
   useEffect(() => {
@@ -40,7 +45,7 @@ export function ListagemUsers() {
       <Container>
         <FlatList
           data={usersDados}
-          renderItem={({item}) => <Users name="Esse teste nao esta mostrando na tela" data={item} />}
+          renderItem={({item}) => <Users data={item} perfil={perfil}/>}
           keyExtractor={(item: UserDTO) => item.login}
         />
       </Container>

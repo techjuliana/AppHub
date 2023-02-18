@@ -1,47 +1,42 @@
 import { ButtonIcon } from "../ButtonIcon";
 import React from "react";
 import * as S from "./styles";
-import Check from "./../../assets/delete.png";
+import star from "./../../assets/star.png";
+import bus from "./../../assets/bus.png";
+import place from "./../../assets/place.png";
+import seta from "./../../assets/seta.png";
 import { UserDTO } from "../../dtos/UserDTO";
 
 type Props = {
   data: UserDTO;
-  name:string;
+  perfil: string;
 };
 
-
-export function Users({ data, name }: Props) {
+export function Users({ data, perfil }: Props) {
   return (
     <S.Container>
       <S.ContainerInfo>
+        <S.UserPerfil source={{ uri: data.avatar_url }} />
         <S.ColunaConjunto>
           <S.LinhaNome>
             <S.Titulo>{data.name}</S.Titulo>
-
-            
-            <S.Titulo></S.Titulo>
-            {/* <ButtonIcon onPress={irPerfil}>
-      <S.Navegar source={Check} />
-      </ButtonIcon> */}
-
-            <S.IconeFinal>
-              {/* <ButtonIcon onPress={onRemove}>
-        <S.Lixo source={Check} />
-      </ButtonIcon> */}
-            </S.IconeFinal>
+            <ButtonIcon onPress={perfil}>
+              <S.Navegar source={seta} />
+            </ButtonIcon>
           </S.LinhaNome>
-
-          {/* <S.Subtitulo>{username}</S.Subtitulo> */}
+          <S.Subtitulo>@{data.login}</S.Subtitulo>
         </S.ColunaConjunto>
       </S.ContainerInfo>
 
       <S.LinhaInfo>
-        {/* <S.Icones source={Check} />
-        <S.TextoInfo>{data.name}</S.TextoInfo>
-        <S.Icones source={Check} />
-        <S.TextoInfo>{data.name}</S.TextoInfo>
-        <S.Icones source={Check} />
-        <S.TextoInfo>{data.name}</S.TextoInfo> */}
+        <S.Icones source={bus} />
+        <S.TextoInfo>{data.company || "Job não mencionado"}</S.TextoInfo>
+        <S.Icones source={place} />
+        <S.TextoInfo>
+          {data.location || "Localização não mencionada"}
+        </S.TextoInfo>
+        <S.Icones source={star} />
+        <S.TextoInfo>{data.public_repos || "0"}</S.TextoInfo>
       </S.LinhaInfo>
     </S.Container>
   );

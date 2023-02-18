@@ -13,3 +13,8 @@ export const Loading = styled.View`
   justify-content: center;
   flex: 1;
 `;
+
+export const List = styled.FlatList`
+ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+`;
