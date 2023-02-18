@@ -11,7 +11,7 @@ export function ListagemUsers() {
   const [usersDados, setUsersDados] = useState<UserDTO[]>([]);
   const [loading, setLoading] = useState(true);
 
-  function perfil() {
+  function handleVerDetalhes() {
 
   }
 
@@ -20,7 +20,7 @@ export function ListagemUsers() {
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await api.get("users/techjuliana");
+      const response = await api.get("users/patrick");
       setUsersDados([response.data]);
       setLoading(false);
     }
@@ -45,7 +45,7 @@ export function ListagemUsers() {
       <Container>
         <FlatList
           data={usersDados}
-          renderItem={({item}) => <Users data={item} perfil={perfil}/>}
+          renderItem={({item}) => <Users data={item} perfil={handleVerDetalhes}/>}
           keyExtractor={(item: UserDTO) => item.login}
         />
       </Container>
