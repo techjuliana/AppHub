@@ -6,34 +6,42 @@ import bus from "./../../assets/bus.png";
 import place from "./../../assets/place.png";
 import seta from "./../../assets/seta.png";
 import { RepoDTO } from "../../dtos/RepoDTO";
+import { Linking } from "react-native";
 
 type Props = {
   data: RepoDTO;
-  perfil: () => void;
 };
 
-export function Repositorios({ data, perfil }: Props) {
+export function Repositorios({ data}: Props) {
   return (
     <S.Container>
       <S.ContainerInfo>
         <S.ColunaConjunto>
           <S.LinhaNome>
-            <S.Titulo>{data.name || data.login}</S.Titulo>
-            <ButtonIcon onPress={perfil}>
+            <S.Titulo>{data.name}</S.Titulo>
+            <ButtonIcon
+              onPress={() => {
+                Linking.openURL(data.html_url);
+              }}
+            >
               <S.Navegar source={seta} />
             </ButtonIcon>
           </S.LinhaNome>
-          <S.Subtitulo>@{data.login}</S.Subtitulo>
+          <S.Subtitulo>
+            {!data.description
+              ? "Esse repositório não tem descrição :( "
+              : data.description}
+          </S.Subtitulo>
         </S.ColunaConjunto>
       </S.ContainerInfo>
 
       <S.LinhaInfo>
         <S.Icones source={bus} />
-        <S.TextoInfo>{data.company || "Job"}</S.TextoInfo>
+        <S.TextoInfo>{data.language || "Não especificado"}</S.TextoInfo>
         <S.Icones source={place} />
-        <S.TextoInfo>{data.location || "Local"}</S.TextoInfo>
+        <S.TextoInfo>{data.stargazers_count || "0"}</S.TextoInfo>
         <S.Icones source={star} />
-        <S.TextoInfo>{data.public_repos || "0"}</S.TextoInfo>
+        <S.TextoInfo>{data.forks_count || "0"}</S.TextoInfo>
       </S.LinhaInfo>
     </S.Container>
   );

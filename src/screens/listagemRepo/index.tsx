@@ -20,8 +20,8 @@ export function ListagemRepo() {
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await api.get("https://api.github.com/search/repositories?q={apphub}");
-      setUsersDados([response.data]);
+      const response = await api.get("https://api.github.com/search/repositories?q=techjuliana/Starbucks");
+      setUsersDados(response.data.items);
       setLoading(false);
     }
 
@@ -45,7 +45,7 @@ export function ListagemRepo() {
       <Container>
         <FlatList
           data={usersDados}
-          renderItem={({item}) => <Repositorios data={item} perfil={handleVerDetalhes}/>}
+          renderItem={({item}) => <Repositorios data={item}/>}
           keyExtractor={(item: RepoDTO) => item.name}
         />
       </Container>

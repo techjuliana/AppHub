@@ -1,5 +1,6 @@
 export interface RepoDTO {
-  name: number;
+  name: string;
+  id:number;
   language: string;
   updated_at: string;
   stargazers_count: string;
