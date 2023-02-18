@@ -16,13 +16,13 @@ export function AppRoutes() {
           headerShown: false,
         }}
       /> */}
-        <Stack.Screen
+        {/* <Stack.Screen
         name="Users"
         component={ListagemUsers}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
       <Stack.Screen
         name="Repo"
         component={ListagemRepo}

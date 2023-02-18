@@ -1,55 +1,39 @@
 import { ButtonIcon } from "../ButtonIcon";
 import React from "react";
 import * as S from "./styles";
-import Check from "./../../assets/delete.png";
+import star from "./../../assets/star.png";
+import bus from "./../../assets/bus.png";
+import place from "./../../assets/place.png";
+import seta from "./../../assets/seta.png";
+import { RepoDTO } from "../../dtos/RepoDTO";
 
 type Props = {
-  name: string;
-  username: string;
-  empresa: string;
-  cidade: string;
-  estrelas: string;
-  onRemove: () => void;
-  irPerfil: () => void;
+  data: RepoDTO;
+  perfil: () => void;
 };
 
-export function Repositorios({
-  name,
-  irPerfil,
-  onRemove,
-  username,
-  empresa,
-  cidade,
-  estrelas,
-}: Props) {
+export function Repositorios({ data, perfil }: Props) {
   return (
     <S.Container>
       <S.ContainerInfo>
         <S.ColunaConjunto>
           <S.LinhaNome>
-            <S.Titulo>{name}</S.Titulo>
-            <ButtonIcon onPress={irPerfil}>
-              <S.Navegar source={Check} />
+            <S.Titulo>{data.name || data.login}</S.Titulo>
+            <ButtonIcon onPress={perfil}>
+              <S.Navegar source={seta} />
             </ButtonIcon>
-
-            <S.IconeFinal>
-              <ButtonIcon onPress={onRemove}>
-                <S.Lixo source={Check} />
-              </ButtonIcon>
-            </S.IconeFinal>
           </S.LinhaNome>
-
-          <S.Subtitulo>{username}</S.Subtitulo>
+          <S.Subtitulo>@{data.login}</S.Subtitulo>
         </S.ColunaConjunto>
       </S.ContainerInfo>
 
       <S.LinhaInfo>
-        <S.Icones source={Check} />
-        <S.TextoInfo>{empresa}</S.TextoInfo>
-        <S.Icones source={Check} />
-        <S.TextoInfo>{cidade}</S.TextoInfo>
-        <S.Icones source={Check} />
-        <S.TextoInfo>{estrelas}</S.TextoInfo>
+        <S.Icones source={bus} />
+        <S.TextoInfo>{data.company || "Job"}</S.TextoInfo>
+        <S.Icones source={place} />
+        <S.TextoInfo>{data.location || "Local"}</S.TextoInfo>
+        <S.Icones source={star} />
+        <S.TextoInfo>{data.public_repos || "0"}</S.TextoInfo>
       </S.LinhaInfo>
     </S.Container>
   );

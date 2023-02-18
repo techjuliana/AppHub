@@ -32,9 +32,7 @@ export function Users({ data, perfil }: Props) {
         <S.Icones source={bus} />
         <S.TextoInfo>{data.company || "Job"}</S.TextoInfo>
         <S.Icones source={place} />
-        <S.TextoInfo>
-          {data.location || "Local"}
-        </S.TextoInfo>
+        <S.TextoInfo>{data.location || "Local"}</S.TextoInfo>
         <S.Icones source={star} />
         <S.TextoInfo>{data.public_repos || "0"}</S.TextoInfo>
       </S.LinhaInfo>

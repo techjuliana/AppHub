@@ -8,9 +8,13 @@ export const Container = styled.View`
   padding: 24px;
 `;
 
- 
 export const Loading = styled.View`
-align-items: center;
-justify-content: center;
-flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+`;
+
+export const List = styled.FlatList`
+ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
 `;
