@@ -1,5 +1,5 @@
 import { Container, ContainerLinha, Loading } from "./styles";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Header } from "../../components/header";
 import api from "../../services/api";
 import { ActivityIndicator, FlatList } from "react-native";
@@ -40,7 +40,7 @@ export function ListagemRepo() {
         <Header />
         <Input placeholder="Pesquise um repositorio..." />
         {/* <Button  style={{ backgroundColor:'#7E7E7E', borderRadius:7, width:70}}  title={"Favoritos"}/> */}
-        <ContainerLinha></ContainerLinha>
+
         <Container>
           <FlatList
             data={usersDados}
@@ -51,4 +51,7 @@ export function ListagemRepo() {
       </Container>
     );
   }
+}
+function moment(fromTime: any) {
+  throw new Error("Function not implemented.");
 }
