@@ -4,7 +4,7 @@ import Tags from "react-native-tags";
 import { Container, Title } from './styles'
 
 
-export function Tag() {
+export function ModalTag() {
   return (
     <Container activeOpacity={0.8}>
        <Tags

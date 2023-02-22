@@ -47,7 +47,7 @@ export function Repositorios({ data }: Props) {
         </S.ColunaConjunto>
       </S.ContainerInfo>
 
-      <Tag title={""} />
+      <Tag title={""}/>
 
       <S.LinhaInfo>
         <S.Icones source={lang} />

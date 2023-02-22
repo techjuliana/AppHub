@@ -1,4 +1,4 @@
-const GROUP_COLLECTION = '@magicbox:groups';
-const PLAYER_COLLECTION = '@magicbox:players';
+const REPO_COLLECTION = '@apphub:repo';
+// const PLAYER_COLLECTION = '@apphub:players';
 
-export { GROUP_COLLECTION, PLAYER_COLLECTION }
+export { REPO_COLLECTION }
