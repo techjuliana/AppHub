@@ -10,7 +10,7 @@ type Props = TouchableOpacityProps & {
 export function Tag({ title, ...rest }: Props) {
   return (
     <Container activeOpacity={0.8} {...rest}>
-      <Title>{title}</Title>
+      <Title>TAGS</Title>
     </Container>
   );
 }

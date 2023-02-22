@@ -7,7 +7,7 @@ export const Container = styled.View`
   align-items: center;
   box-shadow: 10px 5px 4px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
-  background: ${(props) => props.theme.color.SUBTITLE};
+  background: ${(props) => props.theme.color.BACKGROUND2};
   padding: 15px;
 `;
 
@@ -40,7 +40,7 @@ export const TextoInfo = styled.Text`
   font-size: 14px;
   margin-left: 4px;
   margin-right: 8px;
-  color: ${(props) => props.theme.color.BORDER};
+  color: ${(props) => props.theme.color.INFO};
 `;
 
 export const ContainerInfo = styled.View`
