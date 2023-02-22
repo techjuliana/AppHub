@@ -1,12 +1,11 @@
-import { Container, ContainerLinha, Loading } from "./styles";
-import React, { useEffect, useMemo, useState } from "react";
+import { Container, Loading } from "./styles";
+import React, { useEffect, useState } from "react";
 import { Header } from "../../components/header";
 import api from "../../services/api";
 import { ActivityIndicator, FlatList } from "react-native";
 import { RepoDTO } from "../../dtos/RepoDTO";
 import { Input } from "../../components/Input";
 import { Repositorios } from "../../components/repositorios";
-import { Button } from "../../components/Button";
 
 export function ListagemRepo() {
   const [usersDados, setUsersDados] = useState<RepoDTO[]>([]);
@@ -39,7 +38,6 @@ export function ListagemRepo() {
       <Container>
         <Header />
         <Input placeholder="Pesquise um repositorio..." />
-        {/* <Button  style={{ backgroundColor:'#7E7E7E', borderRadius:7, width:70}}  title={"Favoritos"}/> */}
 
         <Container>
           <FlatList
@@ -51,7 +49,4 @@ export function ListagemRepo() {
       </Container>
     );
   }
-}
-function moment(fromTime: any) {
-  throw new Error("Function not implemented.");
 }
