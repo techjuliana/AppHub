@@ -37,7 +37,10 @@ export function Tag() {
             }}
           />
           <TouchableOpacity onPress={() => setModalVisible(false)}>
-            <Text>Fechar</Text>
+            <Text>Salvar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setModalVisible(false)}>
+            <Text>Cancelar</Text>
           </TouchableOpacity>
         </ContainerTag>
       </Modal>

@@ -46,18 +46,14 @@ export function Repositorios({ data }: Props) {
           </S.Subtitulo>
         </S.ColunaConjunto>
       </S.ContainerInfo>
-
-      <Tag title={""}/>
-
+      <Tag />
       <S.LinhaInfo>
         <S.Icones source={lang} />
-        <S.TextoInfo>{data.language || "Não especificado"}</S.TextoInfo>
+        <S.TextoInfo>{data.language || "Linguagem"}</S.TextoInfo>
         <S.Icones source={star} />
         <S.TextoInfo>{data.stargazers_count || "0"}</S.TextoInfo>
         <S.Icones source={pess} />
         <S.TextoInfo>{data.forks_count || "0"}</S.TextoInfo>
-        <S.Icones source={pess} />
-        <S.TextoInfo>Atualizado em {data.updated_at}</S.TextoInfo>
       </S.LinhaInfo>
     </S.Container>
   );

@@ -7,12 +7,18 @@ import place from "./../../assets/place.png";
 import seta from "./../../assets/seta.png";
 import { UserDTO } from "../../dtos/UserDTO";
 
+import { useNavigation } from "@react-navigation/native";
+
 type Props = {
   data: UserDTO;
-  perfil: () => void;
 };
 
-export function Users({ data, perfil }: Props) {
+export function Users({ data }: Props) {
+
+  const navigation = useNavigation();
+  function handleVerDetalhes(user: UserDTO) {
+    navigation.navigate("listaRepositorios", {user });
+  }
   return (
     <S.Container>
       <S.ContainerInfo>
@@ -20,7 +26,7 @@ export function Users({ data, perfil }: Props) {
         <S.ColunaConjunto>
           <S.LinhaNome>
             <S.Titulo>{data.name || data.login}</S.Titulo>
-            <ButtonIcon onPress={perfil}>
+            <ButtonIcon onPress={handleVerDetalhes}>
               <S.Navegar source={seta} />
             </ButtonIcon>
           </S.LinhaNome>

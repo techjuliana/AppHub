@@ -18,3 +18,9 @@ export const List = styled.FlatList`
  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
 `;
+
+export const UserPerfil = styled.Image`
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+`;
