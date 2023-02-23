@@ -27,7 +27,7 @@ export function Sair() {
 
   return (
     <Container>
-      <Button title="Sair do Aplicativo" onPress={ExecuteOsDois} />
+      <Button style={{ padding: 10}} title="Sair do Aplicativo" onPress={ExecuteOsDois} />
     </Container>
   );
 }

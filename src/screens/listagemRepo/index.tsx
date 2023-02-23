@@ -18,11 +18,11 @@ export function ListagemRepo() {
   const [usersDados, setUsersDados] = useState<RepoDTO[]>([]);
   const [loading, setLoading] = useState(true);
   const route = useRoute();
-  const { user } = route.params as Params;
+  const { users } = route.params as Params;
 
   const navigation = useNavigation();
-  function handleSobre(user: UserDTO) {
-    navigation.navigate("sobre", { user });
+  function handleSobre(users: UserDTO) {
+    navigation.navigate("sobre", { users });
   }
 
   console.log("teste api funcionando", usersDados);
@@ -52,9 +52,7 @@ export function ListagemRepo() {
         <Input placeholder="Pesquise um repositorio..." />
 
         <ButtonIcon
-          onPress={() => {
-            handleSobre;
-          }}
+          onPress={handleSobre}
         >
           {/* <UserPerfil source={{ uri: user.avatar_url }} /> */}
           <UserPerfil source={image} />

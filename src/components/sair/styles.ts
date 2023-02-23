@@ -3,5 +3,5 @@ export const Container = styled.View`
   /* flex: 1; */
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 20px;
 `;

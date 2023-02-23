@@ -12,16 +12,16 @@ interface Params {
 
 export function Perfil() {
   const route = useRoute();
-  const { user } = route.params as Params;
+  const {user} = route.params as Params;
 
   return (
     <Container>
       <Container>
         <TextoPrincipal
-          title={user.name}
-          subtitle={user.username}
+          title='nome'
+          subtitle='username'
         />
-       <Text>{user.bio}</Text>
+       <Text>bio</Text>
        <Sair/>
       </Container>
     </Container>
