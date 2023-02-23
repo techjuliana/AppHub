@@ -10,6 +10,8 @@ export default {
     TAG: "#EBEBEB",
     TAGTEXT: "#000000",
     BACKGROUND2: "#F8F8F8",
+    BACKGROUNDMODAL: "#454545",
     INFO: " #7E7E7E",
+    
   },
 };

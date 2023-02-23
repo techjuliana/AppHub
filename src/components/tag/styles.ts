@@ -30,5 +30,5 @@ export const ContainerB = styled.View`
   width: 100%;
   height: 100%;
   justify-content: center;
-  background: ${(props) => props.theme.color.TEXTINPUT};
+  background: ${(props) => props.theme.color.BACKGROUNDMODAL};
 `;
