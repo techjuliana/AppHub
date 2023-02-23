@@ -7,13 +7,9 @@ import { ActivityIndicator, FlatList, Text } from "react-native";
 import { UserDTO } from "../../dtos/UserDTO";
 import { Input } from "../../components/Input";
 
-
 export function ListagemUsers() {
   const [usersDados, setUsersDados] = useState<UserDTO[]>([]);
   const [loading, setLoading] = useState(true);
-
-
-  
 
   console.log("teste api funcionando", usersDados);
 
@@ -43,7 +39,7 @@ export function ListagemUsers() {
         <Container>
           <FlatList
             data={usersDados}
-            renderItem={({item}) => <Users data={item}/>}
+            renderItem={({ item }) => <Users data={item} />}
             keyExtractor={(item: UserDTO) => item.login}
           />
         </Container>

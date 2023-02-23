@@ -8,4 +8,5 @@ export interface UserDTO {
   company:string;
   location:string;
   avatar_url:string;
+  bio:string;
 }

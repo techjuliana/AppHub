@@ -13,7 +13,7 @@ type Props = {
   data: UserDTO;
 };
 
-export function Users({ data }: Props) {
+export function Users({ data}: Props) {
 
   const navigation = useNavigation();
   function handleVerDetalhes(user: UserDTO) {
