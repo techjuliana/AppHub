@@ -19,8 +19,4 @@ export const List = styled.FlatList`
   border-radius: 8px;
 `;
 
-export const UserPerfil = styled.Image`
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-`;
+

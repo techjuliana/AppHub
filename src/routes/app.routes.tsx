@@ -35,7 +35,7 @@ export function AppRoutes() {
         name="sobre"
         component={Perfil}
         options={{
-          headerShown: false,
+          headerShown: true,
         }}
       />
     </Stack.Navigator>

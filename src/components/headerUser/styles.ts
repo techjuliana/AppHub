@@ -18,9 +18,3 @@ export const Logo = styled.Image`
 export const Botao = styled.View`
   width:130px;
 `;
-
-export const UserPerfil = styled.Image`
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-`;
