@@ -1,4 +1,4 @@
-import { Container} from "./styles";
+import { Container } from "./styles";
 import React, { useEffect, useState } from "react";
 import { Header } from "../../components/header";
 import api from "../../services/api";
@@ -25,7 +25,7 @@ export function ListagemRepo() {
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await api.get("users/techjuliana/repos");
+      const response = await api.get(`users/techjuliana/starred`);
       setUsersDados(response.data);
       setFiltro(response.data);
     }
@@ -70,5 +70,3 @@ export function ListagemRepo() {
     </Container>
   );
 }
-
-
