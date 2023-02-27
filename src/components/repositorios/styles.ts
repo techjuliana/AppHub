@@ -46,20 +46,20 @@ export const TextoInfo = styled.Text`
 
 export const ContainerInfo = styled.View`
   flex-direction: row;
-  padding: 20px;
+  padding: 10px;
   justify-content: space-between;
 `;
 
 export const LinhaNome = styled.View`
   flex-direction: row;
+  margin-bottom:10px;
 `;
 
 export const IconeFinal = styled.View``;
 
 export const ColunaConjunto = styled.View`
   flex-direction: column;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-bottom: 5px;
 `;
 
 export const LinhaInfo = styled.View`

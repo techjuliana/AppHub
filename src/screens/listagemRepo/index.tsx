@@ -56,8 +56,6 @@ export function ListagemRepo() {
         placeholder="Pesquise um repositorio..."
         onChangeText={(text) => searchFilter(text)}
         value={search}
-        underlineColorAndroid="transparent"
-        autoCorrect={false}
       />
 
       <Container>
