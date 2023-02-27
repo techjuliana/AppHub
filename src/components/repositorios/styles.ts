@@ -8,7 +8,8 @@ export const Container = styled.View`
   box-shadow: 10px 5px 4px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   background: ${(props) => props.theme.color.BACKGROUND2};
-  padding: 15px;
+  padding: 10px;
+  margin:10px;
 `;
 
 export const UserPerfil = styled.Image`

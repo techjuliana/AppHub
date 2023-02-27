@@ -1,4 +1,7 @@
 export interface RepoDTO {
+  starred_url: string;
+  full_name: string;
+  user: any;
   name: string;
   id:number;
   language: string;

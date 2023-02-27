@@ -1,51 +1,74 @@
-import { Container, Loading } from "./styles";
+import { Container} from "./styles";
 import React, { useEffect, useState } from "react";
 import { Header } from "../../components/header";
 import api from "../../services/api";
-import { ActivityIndicator, FlatList, Text, View } from "react-native";
+import { FlatList } from "react-native";
 import { RepoDTO } from "../../dtos/RepoDTO";
 import { Input } from "../../components/Input";
 import { Repositorios } from "../../components/repositorios";
+import { UserDTO } from "../../dtos/UserDTO";
+import { useRoute } from "@react-navigation/native";
+
+interface Params {
+  user: UserDTO;
+}
 
 export function ListagemRepo() {
+  const [search, setSearch] = useState("");
   const [usersDados, setUsersDados] = useState<RepoDTO[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [filtro, setFiltro] = useState<RepoDTO[]>([]);
+
+  const route = useRoute();
+  const { user } = route.params as Params;
 
   console.log("teste api funcionando", usersDados);
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await api.get(
-        "https://api.github.com/search/repositories?q=techjuliana/Starbucks"
-      );
-      setUsersDados(response.data.items);
-      setLoading(false);
+      const response = await api.get("users/techjuliana/repos");
+      setUsersDados(response.data);
+      setFiltro(response.data);
     }
 
     loadUsers();
   }, []);
 
-  if (loading) {
-    return (
-      <Loading>
-        <ActivityIndicator color="#282727" size={45} />
-      </Loading>
-    );
-  } else {
-    return (
+  const searchFilter = (text: string) => {
+    if (text) {
+      const newData = usersDados.filter(function (item) {
+        if (item.name) {
+          const itemData = item.name.toUpperCase();
+          const textData = text.toUpperCase();
+          return itemData.indexOf(textData) > -1;
+        }
+      });
+      setFiltro(newData);
+    } else {
+      setFiltro(usersDados);
+    }
+    setSearch(text);
+  };
+
+  return (
+    <Container>
+      <Header />
+      <Input
+        placeholder="Pesquise um repositorio..."
+        onChangeText={(text) => searchFilter(text)}
+        value={search}
+        underlineColorAndroid="transparent"
+        autoCorrect={false}
+      />
+
       <Container>
-        <Header />
-
-        <Input placeholder="Pesquise um repositorio..." />
-
-        <Container>
-          <FlatList
-            data={usersDados}
-            renderItem={({ item }) => <Repositorios data={item} />}
-            keyExtractor={(item: RepoDTO) => item.name}
-          />
-        </Container>
+        <FlatList
+          data={filtro}
+          renderItem={({ item }) => <Repositorios data={item} />}
+          keyExtractor={(item: RepoDTO) => item.name}
+        />
       </Container>
-    );
-  }
+    </Container>
+  );
 }
+
+

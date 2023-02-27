@@ -1,15 +1,14 @@
-import { Container, Loading } from "./styles";
+import { Container } from "./styles";
 import React, { useEffect, useState } from "react";
 import { Users } from "../../components/users";
 import api from "../../services/api";
-import { ActivityIndicator, FlatList, Text } from "react-native";
+import {  FlatList } from "react-native";
 import { UserDTO } from "../../dtos/UserDTO";
 import { Input } from "../../components/Input";
 import { HeaderUser } from "../../components/headerUser";
 
 export function ListagemUsers() {
   const [usersDados, setUsersDados] = useState<UserDTO[]>([]);
-  const [loading, setLoading] = useState(true);
 
   console.log("teste api funcionando", usersDados);
 
@@ -17,19 +16,11 @@ export function ListagemUsers() {
     async function loadUsers() {
       const response = await api.get("users/techjuliana");
       setUsersDados([response.data]);
-      setLoading(false);
     }
 
     loadUsers();
   }, []);
 
-  if (loading) {
-    return (
-      <Loading>
-        <ActivityIndicator color="#282727" size={45} />
-      </Loading>
-    );
-  } else {
     return (
       <Container>
         <HeaderUser />
@@ -44,4 +35,4 @@ export function ListagemUsers() {
       </Container>
     );
   }
-}
+
