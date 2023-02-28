@@ -1,14 +1,12 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-  width: 300px;
+  width: 100%;
   border-radius: 6px;
   flex-direction: column;
   align-items: center;
-  box-shadow: 10px 5px 4px rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  background: ${(props) => props.theme.color.BACKGROUND2};
-  padding: 15px;
+  background: ${(props) => props.theme.color.BACKGROUND};
+  padding: 24px;
 `;
 
 export const UserPerfil = styled.Image`
@@ -18,7 +16,7 @@ export const UserPerfil = styled.Image`
 `;
 
 export const Navegar = styled.Image`
-  margin-left: 50px;
+  margin-left: 20px;
 `;
 
 export const Icones = styled.Image``;
@@ -27,7 +25,6 @@ export const Titulo = styled.Text`
   font-size: 18px;
   font-weight: bold;
   color: ${(props) => props.theme.color.TITLE};
-  max-width: 110px;
 `;
 
 export const Subtitulo = styled.Text`
@@ -58,11 +55,10 @@ export const IconeFinal = styled.View``;
 export const ColunaConjunto = styled.View`
   flex-direction: column;
   margin-left: 20px;
-  margin-right: 20px;
 `;
 
 export const LinhaInfo = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
-  width:100%;
+  
 `;

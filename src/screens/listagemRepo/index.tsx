@@ -25,7 +25,7 @@ export function ListagemRepo() {
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await api.get(`users/techjuliana/starred`);
+      const response = await api.get(`users/${user.login}/starred`);
       setUsersDados(response.data);
       setFiltro(response.data);
     }

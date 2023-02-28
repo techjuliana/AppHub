@@ -25,7 +25,8 @@
     "react-native-safe-area-context": "^4.5.0",
     "react-native-screens": "^3.19.0",
     "react-native-tags": "^2.2.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

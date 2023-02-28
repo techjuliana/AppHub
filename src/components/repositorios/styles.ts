@@ -1,15 +1,14 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-  width: 300px;
   border-radius: 6px;
   flex-direction: column;
   align-items: center;
-  box-shadow: 10px 5px 4px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
-  background: ${(props) => props.theme.color.BACKGROUND2};
+  background: ${(props) => props.theme.color.BACKGROUND};
   padding: 10px;
-  margin:10px;
+  margin-bottom:10px;
+  margin-top:10px;
 `;
 
 export const UserPerfil = styled.Image`
@@ -28,7 +27,7 @@ export const Titulo = styled.Text`
   font-size: 18px;
   font-weight: bold;
   color: ${(props) => props.theme.color.TITLE};
-  max-width: 110px;
+  max-width: 140px;
 `;
 
 export const Subtitulo = styled.Text`
@@ -65,5 +64,4 @@ export const ColunaConjunto = styled.View`
 export const LinhaInfo = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
-  width:100%;
 `;

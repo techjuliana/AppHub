@@ -6,18 +6,16 @@ import bus from "./../../assets/bus.png";
 import place from "./../../assets/place.png";
 import seta from "./../../assets/seta.png";
 import { UserDTO } from "../../dtos/UserDTO";
-
 import { useNavigation } from "@react-navigation/native";
 
 type Props = {
   data: UserDTO;
 };
 
-export function Users({ data}: Props) {
-
+export function Users({ data }: Props) {
   const navigation = useNavigation();
   function handleVerDetalhes(user: UserDTO) {
-    navigation.navigate("listaRepositorios", {user});
+    navigation.navigate("listaRepositorios", { user });
   }
 
   return (

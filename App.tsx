@@ -6,7 +6,7 @@ import theme from "./src/theme";
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar backgroundColor="#202024" barStyle="light-content" />
+      <StatusBar backgroundColor="#7e7e7e" barStyle="light-content" />
       <Routes />
     </ThemeProvider>
   );

@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { Container, Account, IconContent, Logo } from "./styles";
+import { Container, Account, Logo } from "./styles";
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { TextoPrincipal } from "../../components/TextoPrincipal";
-import { useNavigation } from "@react-navigation/native";
 // import analytics from "@react-native-firebase/analytics";
 import auth from "@react-native-firebase/auth";
 import { Alert } from "react-native";
 // import crashlytics from "@react-native-firebase/crashlytics";
-
+import * as Yup from "yup";
 import Git from "./../../assets/git.png";
 
 export function Login() {
@@ -41,18 +40,27 @@ export function Login() {
   }
 
   async function handleSignInWithEmailAndPassword() {
-    auth()
-      .signInWithEmailAndPassword(email, senha)
-      .then(({ user }) => console.log(user))
-      .catch((error) => {
-        console.log(error.code);
-        if (
-          error.code === "auth/user-not-found" ||
-          error.code === "auth/wrong-password"
-        ) {
-          Alert.alert("Usuário não encontrado. E-mail e/ou senha inválida!");
-        }
+    try {
+      const schema = Yup.object().shape({
+        email: Yup.string()
+          .required("E-mail obrigatório")
+          .email("Digite um e-mail válido"),
+        senha: Yup.string().required("A senha é obrigatória"),
       });
+
+      await schema.validate({ email, senha });
+
+      auth({ email, senha });
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        Alert.alert("Atenção", error.message);
+      } else {
+        Alert.alert(
+          "Erro na autenticação",
+          "Ocorreu um erro, verifique as credenciais"
+        );
+      }
+    }
   }
 
   async function handleRedefinirSenha() {
@@ -67,7 +75,7 @@ export function Login() {
 
   return (
     <Container>
-        <Logo source={Git} />
+      <Logo source={Git} />
       <TextoPrincipal
         title="Criar conta"
         subtitle="Crie sua conta  e tenha acesso 
