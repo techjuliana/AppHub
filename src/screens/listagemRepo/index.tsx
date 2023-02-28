@@ -56,6 +56,9 @@ export function ListagemRepo() {
         placeholder="Pesquise um repositorio..."
         onChangeText={(text) => searchFilter(text)}
         value={search}
+        returnKeyType="send"
+        autoCapitalize="none"
+        autoCorrect={false}
       />
       <Container>
         <FlatList
