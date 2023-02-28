@@ -8,8 +8,8 @@ export const Title = styled.Text`
 `;
 
 export const ContainerTag = styled.View`
-  margin: 30px;
-  height: 70%;
+  margin: 20px;
+  height: 330px;
   border-radius: 6px;
   flex-direction: column;
   align-items: center;
