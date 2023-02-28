@@ -57,7 +57,6 @@ export function ListagemRepo() {
         onChangeText={(text) => searchFilter(text)}
         value={search}
       />
-
       <Container>
         <FlatList
           data={filtro}

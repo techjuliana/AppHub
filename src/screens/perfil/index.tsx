@@ -3,7 +3,7 @@ import { TextoPrincipal } from "../../components/TextoPrincipal";
 import React from "react";
 import { Text } from "react-native";
 import { Sair } from "../../components/sair";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { UserDTO } from "../../dtos/UserDTO";
 
 interface Params {
@@ -18,10 +18,10 @@ export function Perfil() {
     <Container>
       <Container>
         <TextoPrincipal
-          title='nome'
-          subtitle='username'
+          title={user.name}
+          subtitle={user.login}
         />
-       <Text>bio</Text>
+       <Text>{user.bio}</Text>
        <Sair/>
       </Container>
     </Container>

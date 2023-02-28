@@ -11,20 +11,21 @@ interface Params {
 
 export function Header() {
   const route = useRoute();
-  const { users } = route.params as Params;
+  const { user } = route.params as Params;
 
   const navigation = useNavigation();
-  function handleSobre(users: UserDTO) {
-    navigation.navigate("sobre", { users });
+
+  function handleSobre(user: UserDTO) {
+    navigation.navigate("sobre", {user});
   }
 
   return (
     <Container>
       <Logo source={Git} />
       <Botao>
-        <ButtonIcon onPress={handleSobre}>
-          {/* <UserPerfil source={{ uri: user.avatar_url }} /> */}
-          <UserPerfil source={image} />
+        <ButtonIcon onPress={() => handleSobre(user)}>
+          <UserPerfil source={{ uri: user.avatar_url }} />
+          {/* <UserPerfil source={image} /> */}
         </ButtonIcon>
       </Botao>
     </Container>

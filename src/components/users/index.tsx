@@ -17,8 +17,9 @@ export function Users({ data}: Props) {
 
   const navigation = useNavigation();
   function handleVerDetalhes(user: UserDTO) {
-    navigation.navigate("listaRepositorios", {user });
+    navigation.navigate("listaRepositorios", {user});
   }
+
   return (
     <S.Container>
       <S.ContainerInfo>
@@ -26,7 +27,7 @@ export function Users({ data}: Props) {
         <S.ColunaConjunto>
           <S.LinhaNome>
             <S.Titulo>{data.name || data.login}</S.Titulo>
-            <ButtonIcon onPress={handleVerDetalhes}>
+            <ButtonIcon onPress={() => handleVerDetalhes(data)}>
               <S.Navegar source={seta} />
             </ButtonIcon>
           </S.LinhaNome>
