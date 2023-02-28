@@ -37,30 +37,30 @@ export function Login() {
       });
   }
 
-  async function handleSignInWithEmailAndPassword() {
-    try {
-      const schema = Yup.object().shape({
-        email: Yup.string()
-          .required("E-mail obrigatório")
-          .email("Digite um e-mail válido"),
-        senha: Yup.string().required("A senha é obrigatória"),
-      });
-
-      await schema.validate({ email, senha });
-
-      auth({email, senha });
-    } catch (error) {
-      if (error instanceof Yup.ValidationError) {
-        Alert.alert("Atenção", error.message);
-      } else {
-        Alert.alert(
-          "Erro na autenticação",
-          "Ocorreu um erro, verifique as credenciais"
-        );
+  async function handleSignIn() {
+        const schema = Yup.object().shape({
+          email: Yup.string()
+            .required('E-mail obrigatório')
+            .email('Digite um e-mail válido'),
+          senha: Yup.string()
+            .required('A senha é obrigatória')
+        });
+    
+        await schema.validate({ email, senha });
+      auth()
+        .signInWithEmailAndPassword(email, senha)
+        .then(({ user }) => console.log(user))
+        .catch((error) => {
+          console.log(error.code);
+          if (
+            error.code === "auth/user-not-found" ||
+            error.code === "auth/wrong-password"
+          ) {
+            Alert.alert("Usuário não encontrado. E-mail e/ou senha inválida!");
+          }
+        });
       }
-    }
-  }
-
+      
   async function handleRedefinirSenha() {
     auth()
       .sendPasswordResetEmail(email)
@@ -87,7 +87,7 @@ export function Login() {
 
       <Input placeholder="Senha" onChangeText={setSenha} secureTextEntry />
 
-      <Button title="Entrar" onPress={handleSignInWithEmailAndPassword} />
+      <Button title="Entrar" onPress={handleSignIn} />
       <Account>
         <ButtonText title="Esqueceu a senha?" onPress={handleRedefinirSenha} />
         <ButtonText
