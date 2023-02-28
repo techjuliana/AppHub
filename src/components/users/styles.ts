@@ -60,5 +60,4 @@ export const ColunaConjunto = styled.View`
 export const LinhaInfo = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
-  
 `;

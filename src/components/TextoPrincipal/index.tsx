@@ -1,4 +1,4 @@
-import { Container, Title, Subtitle } from "./styles";
+import * as S from "./styles";
 import React from "react";
 type Props = {
   title: string;
@@ -7,9 +7,9 @@ type Props = {
 
 export function TextoPrincipal({ title, subtitle }: Props) {
   return (
-    <Container>
-      <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
-    </Container>
+    <S.Container>
+      <S.Title>{title}</S.Title>
+      <S.Subtitle>{subtitle}</S.Subtitle>
+    </S.Container>
   );
 }

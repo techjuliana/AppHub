@@ -1,7 +1,6 @@
 import styled  from "styled-components/native";
 
 export const Container = styled.TextInput`
-  /* flex: 1; */
   width:100%;
   max-height: 50px;
   font-size: 14px;

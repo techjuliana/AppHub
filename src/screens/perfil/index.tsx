@@ -1,4 +1,4 @@
-import { Container, Lado } from "./styles";
+import * as S from "./styles";
 import { TextoPrincipal } from "../../components/TextoPrincipal";
 import React from "react";
 import { Text } from "react-native";
@@ -16,18 +16,18 @@ export function Perfil() {
   const { user } = route.params as Params;
 
   return (
-    <Container>
-      <Container>
-        <Lado>
+    <S.Container>
+      <S.Container>
+        <S.Lado>
           <UserPerfil
             style={{ width: 90, height: 90, borderRadius: 50 }}
             source={{ uri: user.avatar_url }}
           />
           <TextoPrincipal title="" subtitle={user.login} />
-        </Lado>
+        </S.Lado>
         <Text>{user.bio}</Text>
         <Sair />
-      </Container>
-    </Container>
+      </S.Container>
+    </S.Container>
   );
 }

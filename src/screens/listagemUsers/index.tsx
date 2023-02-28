@@ -1,4 +1,4 @@
-import { Container, ContainerInput, Navegar } from "./styles";
+import * as S from "./styles";
 import React, { useState } from "react";
 import { Users } from "../../components/users";
 import api from "../../services/api";
@@ -21,9 +21,9 @@ export function ListagemUsers() {
   };
 
   return (
-    <Container>
+    <S.Container>
       <HeaderUser />
-      <ContainerInput>
+      <S.ContainerInput>
         <Input
           placeholder="Pesquise seu @usuario..."
           value={inputText}
@@ -33,16 +33,16 @@ export function ListagemUsers() {
           autoCorrect={false}
         />
         <ButtonIcon onPress={loadUsers}>
-          <Navegar source={search} />
+          <S.Navegar source={search} />
         </ButtonIcon>
-      </ContainerInput>
-      <Container>
+      </S.ContainerInput>
+      <S.Container>
         <FlatList
           data={usersDados}
           renderItem={({ item }) => <Users data={item} />}
           keyExtractor={(item: UserDTO) => item.login}
         />
-      </Container>
-    </Container>
+      </S.Container>
+    </S.Container>
   );
 }

@@ -1,9 +1,8 @@
-import { Botao, Container, Logo, UserPerfil } from "./styles";
+import * as S from "./styles";
 import Git from "./../../assets/git.png";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { ButtonIcon } from "../ButtonIcon";
-import image from "./../../assets/pess.png";
 import { UserDTO } from "../../dtos/UserDTO";
 interface Params {
   user: UserDTO;
@@ -16,18 +15,18 @@ export function Header() {
   const navigation = useNavigation();
 
   function handleSobre(user: UserDTO) {
-    navigation.navigate("sobre", {user});
+    navigation.navigate("sobre", { user });
   }
 
   return (
-    <Container>
-      <Logo source={Git} />
-      <Botao>
+    <S.Container>
+      <S.Logo source={Git} />
+      <S.Botao>
         <ButtonIcon onPress={() => handleSobre(user)}>
-          <UserPerfil source={{ uri: user.avatar_url }} />
+          <S.UserPerfil source={{ uri: user.avatar_url }} />
           {/* <UserPerfil source={image} /> */}
         </ButtonIcon>
-      </Botao>
-    </Container>
+      </S.Botao>
+    </S.Container>
   );
 }

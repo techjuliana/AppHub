@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Text, Image } from "react-native";
-import { Container, ContainerB, ContainerLinha, ContainerTag } from "./styles";
+import * as S from "./styles";
 import Abrir from "./../../assets/edit.png";
 import { ButtonIcon } from "../ButtonIcon";
 import Tags from "react-native-tags";
@@ -14,8 +14,8 @@ export function Tag() {
     setModalVisible(true);
   }
   return (
-    <Container>
-      <ContainerLinha>
+    <S.Container>
+      <S.ContainerLinha>
         <Text>Tags salvas {}</Text>
         <ButtonIcon
           onPress={abrirModal}
@@ -23,10 +23,10 @@ export function Tag() {
         >
           <Image source={Abrir} />
         </ButtonIcon>
-      </ContainerLinha>
+      </S.ContainerLinha>
       <Modal transparent={true} animationType="slide" visible={modalVisible}>
-        <ContainerB>
-          <ContainerTag>
+        <S.ContainerB>
+          <S.ContainerTag>
             <TextoPrincipal
               title={"Tags"}
               subtitle={
@@ -50,9 +50,9 @@ export function Tag() {
               onPress={() => setModalVisible(false)}
               title={"Salvar"}
             ></Button>
-          </ContainerTag>
-        </ContainerB>
+          </S.ContainerTag>
+        </S.ContainerB>
       </Modal>
-    </Container>
+    </S.Container>
   );
 }

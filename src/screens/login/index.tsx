@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Account, Logo } from "./styles";
+import * as S from "./styles";
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -38,29 +38,28 @@ export function Login() {
   }
 
   async function handleSignIn() {
-        const schema = Yup.object().shape({
-          email: Yup.string()
-            .required('E-mail obrigatório')
-            .email('Digite um e-mail válido'),
-          senha: Yup.string()
-            .required('A senha é obrigatória')
-        });
-    
-        await schema.validate({ email, senha });
-      auth()
-        .signInWithEmailAndPassword(email, senha)
-        .then(({ user }) => console.log(user))
-        .catch((error) => {
-          console.log(error.code);
-          if (
-            error.code === "auth/user-not-found" ||
-            error.code === "auth/wrong-password"
-          ) {
-            Alert.alert("Usuário não encontrado. E-mail e/ou senha inválida!");
-          }
-        });
-      }
-      
+    const schema = Yup.object().shape({
+      email: Yup.string()
+        .required("E-mail obrigatório")
+        .email("Digite um e-mail válido"),
+      senha: Yup.string().required("A senha é obrigatória"),
+    });
+
+    await schema.validate({ email, senha });
+    auth()
+      .signInWithEmailAndPassword(email, senha)
+      .then(({ user }) => console.log(user))
+      .catch((error) => {
+        console.log(error.code);
+        if (
+          error.code === "auth/user-not-found" ||
+          error.code === "auth/wrong-password"
+        ) {
+          Alert.alert("Usuário não encontrado. E-mail e/ou senha inválida!");
+        }
+      });
+  }
+
   async function handleRedefinirSenha() {
     auth()
       .sendPasswordResetEmail(email)
@@ -72,8 +71,8 @@ export function Login() {
   }
 
   return (
-    <Container>
-      <Logo source={Git} />
+    <S.Container>
+      <S.Logo source={Git} />
       <TextoPrincipal
         title="Faça seu Login"
         subtitle="Acesse 
@@ -88,13 +87,13 @@ export function Login() {
       <Input placeholder="Senha" onChangeText={setSenha} secureTextEntry />
 
       <Button title="Entrar" onPress={handleSignIn} />
-      <Account>
+      <S.Account>
         <ButtonText title="Esqueceu a senha?" onPress={handleRedefinirSenha} />
         <ButtonText
           title="Criar minha conta"
           onPress={handleCreateUserAccount}
         />
-      </Account>
-    </Container>
+      </S.Account>
+    </S.Container>
   );
 }
