@@ -3,6 +3,7 @@ Aplicativo clone Github
 
 <h3 align="center">
 Feito em React Native, usando API com AXIOS, StyledComponents, Routes, Themes, Navegação por Stack, Detalhes, Typescript, Firebase e 
+Params
 
 ### Screen de Login, Criar conta e esqueceu a senha ⬇️
 <img src="https://raw.githubusercontent.com/techjuliana/AppHub/main/design/conta.png?token=GHSAT0AAAAAAB7MSD3IF6AM2DQZPCGJSXC6Y76GEYQ" height="480" width="300">
