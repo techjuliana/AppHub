@@ -2,7 +2,7 @@
 Aplicativo clone Github
 
 <h3 align="center">
-Feito em React Native, usando API com AXIOS, StyledComponents, Routes, Themes, Navegação por Stack, Loading de carregamento, Detalhes, Typescript, Animação
+Feito em React Native, usando API com AXIOS, StyledComponents, Routes, Themes, Navegação por Stack, Detalhes, Typescript, Firebase e 
 
 ### Screen de Login, Criar conta e esqueceu a senha ⬇️
 <img src="https://raw.githubusercontent.com/techjuliana/AppHub/main/design/conta.png?token=GHSAT0AAAAAAB7MSD3IF6AM2DQZPCGJSXC6Y76GEYQ" height="480" width="300">
@@ -22,6 +22,11 @@ Feito em React Native, usando API com AXIOS, StyledComponents, Routes, Themes, N
 ### Screen modal Tags (excluir, adicionar e editar) dos repositorios favoritos EM CONTRUÇÃO ⬇️
 <img src="https://raw.githubusercontent.com/techjuliana/AppHub/main/design/tag2.png?token=GHSAT0AAAAAAB7MSD3IEO2CGSYGUVANMK3QY76GFGQ" height="480" width="300">
 <img src="https://raw.githubusercontent.com/techjuliana/AppHub/main/design/tag2.png?token=GHSAT0AAAAAAB7MSD3IEO2CGSYGUVANMK3QY76GFGQ" height="480" width="300">
+
+
+### Screen detalhes do usuario e opção de sair da aplicação usando analytics do firebase para analisar quantos usuarios sairiam ⬇️
+<img src="https://raw.githubusercontent.com/techjuliana/AppHub/main/design/sob.png?token=GHSAT0AAAAAAB7MSD3IIQQM5ILY7NC2VWMYY76GFLQ" height="480" width="300">
+
 ### `Yarn`
 
 ## Tech Juliana
