@@ -50,11 +50,6 @@ export function Tag() {
               onPress={() => setModalVisible(false)}
               title={"Salvar"}
             ></Button>
-            <Button
-              style={{ backgroundColor: "white", marginTop: 5 }}
-              onPress={() => setModalVisible(false)}
-              title={"Cancelar"}
-            ></Button>
           </ContainerTag>
         </ContainerB>
       </Modal>

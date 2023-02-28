@@ -4,10 +4,8 @@ import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { TextoPrincipal } from "../../components/TextoPrincipal";
-// import analytics from "@react-native-firebase/analytics";
 import auth from "@react-native-firebase/auth";
 import { Alert } from "react-native";
-// import crashlytics from "@react-native-firebase/crashlytics";
 import * as Yup from "yup";
 import Git from "./../../assets/git.png";
 
@@ -77,9 +75,9 @@ export function Login() {
     <Container>
       <Logo source={Git} />
       <TextoPrincipal
-        title="Criar conta"
-        subtitle="Crie sua conta  e tenha acesso 
-        a toda nossa plataforma"
+        title="Faça seu Login"
+        subtitle="Acesse 
+        a nossa plataforma e tenha acesso a seus repositórios favoritos"
       />
       <Input
         placeholder="E-mail"
@@ -89,7 +87,7 @@ export function Login() {
 
       <Input placeholder="Senha" onChangeText={setSenha} secureTextEntry />
 
-      <Button title="Cadastrar" onPress={handleSignInWithEmailAndPassword} />
+      <Button title="Entrar" onPress={handleSignInWithEmailAndPassword} />
       <Account>
         <ButtonText title="Esqueceu a senha?" onPress={handleRedefinirSenha} />
         <ButtonText
