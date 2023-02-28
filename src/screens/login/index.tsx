@@ -48,7 +48,7 @@ export function Login() {
 
       await schema.validate({ email, senha });
 
-      auth({ email, senha });
+      auth({email, senha });
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         Alert.alert("Atenção", error.message);
